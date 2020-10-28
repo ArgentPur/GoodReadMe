@@ -1,8 +1,9 @@
 // function passing in liscense as an arg
 function renderLicenseBadge(license){
   if (license !== "None"){
-    return ""
+    return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`
   }
+  return ''
 }
 //fucntion for creating link
 function renderLicenseLink(license){
@@ -20,12 +21,9 @@ function renderLicenseSection(license){
 // function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.name}
-  ${data.gitub}
+  ${data.github}
   
-
   # GitHub Name
-
-  ## Project Titleindex
 
   ${data.projectName}
 `;

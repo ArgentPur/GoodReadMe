@@ -6,7 +6,7 @@ const generateMarkdown = require("./utils/generateMarkdown");
 const questions = [
 {
     type: "input",
-    name: "github",
+    name: "Github",
     message: "What is your github username?"
 },
 {
@@ -16,28 +16,29 @@ const questions = [
 },
 {
     type: "input",
-    name: "title",
+    name: "Project Title",
     message: "What is the title of your project?"
   
 },
 {
     type: "input",
-    name: "description",
+    name: "Description",
     message: "Provide a desriction of your project:"
    
-},
-{
-    type:"list",
-    name:"license",
-    message:"What license is used for repo?",
-    choices: ["MIT", "APACHE 2.0", "GLP 3.0", "BSD 3", "None"]  
 },
 {
     type: "input",
     name: "dependencies",
     message: "Please provide all dependencies related to this application."
 
+},
+{
+    type:"list",
+    name:"license",
+    message:"What license is used for repo?",
+    choices: ["MIT", "APACHE 2.0", "GLP 3.0", "BSD 3", "None"]  
 }
+
 ];
 
 // function to write README file
@@ -51,7 +52,7 @@ function init() {
     // .then function
     .then((answers) => {
         console.log("Generating README");
-        writeToFile("README.md", generateMarkdown())
+        writeToFile("README.md", generateMarkdown({...answers}))
     })
     // call the function writeToFile using the data that we pass (ie the inquirer responses)
     writeToFile(fileName, data);
