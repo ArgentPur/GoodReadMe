@@ -1,12 +1,42 @@
 const inquirer = require("inquirer")
 const fs = require("fs")
-const path = require("path")
+const path = require("path");
+const generateMarkdown = require("./utils/generateMarkdown");
 // array of questions for user
 const questions = [
 {
     type: "input",
     name: "github",
     message: "What is your github username?"
+},
+{
+    type: "input",
+    name: "email",
+    message: "Enter your email:"
+},
+{
+    type: "input",
+    name: "title",
+    message: "What is the title of your project?"
+  
+},
+{
+    type: "input",
+    name: "description",
+    message: "Provide a desriction of your project:"
+   
+},
+{
+    type:"list",
+    name:"license",
+    message:"What license is used for repo?",
+    choices: ["MIT", "APACHE 2.0", "GLP 3.0", "BSD 3", "None"]  
+},
+{
+    type: "input",
+    name: "dependencies",
+    message: "Please provide all dependencies related to this application."
+
 }
 ];
 
@@ -17,8 +47,14 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
-    inquirer.prompt(questions) // .then function
+    inquirer.prompt(questions) 
+    // .then function
+    .then((answers) => {
+        console.log("Generating README");
+        writeToFile("README.md", generateMarkdown())
+    })
     // call the function writeToFile using the data that we pass (ie the inquirer responses)
+    writeToFile(fileName, data);
 }
 
 // function call to initialize program
