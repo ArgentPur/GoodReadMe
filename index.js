@@ -6,7 +6,7 @@ const generateMarkdown = require("./utils/generateMarkdown");
 const questions = [
 {
     type: "input",
-    name: "Github",
+    name: "github",
     message: "What is your github username?"
 },
 {
@@ -16,13 +16,13 @@ const questions = [
 },
 {
     type: "input",
-    name: "Project Title",
+    name: "projectTitle",
     message: "What is the title of your project?"
   
 },
 {
     type: "input",
-    name: "Description",
+    name: "description",
     message: "Provide a desriction of your project:"
    
 },
@@ -52,7 +52,7 @@ function init() {
     // .then function
     .then((answers) => {
         console.log("Generating README");
-        writeToFile("README.md", generateMarkdown({...answers}))
+        writeToFile("README.md", generateMarkdown(...answers))
     })
     // call the function writeToFile using the data that we pass (ie the inquirer responses)
     writeToFile(fileName, data);

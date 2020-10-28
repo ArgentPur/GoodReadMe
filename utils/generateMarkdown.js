@@ -7,10 +7,18 @@ function renderLicenseBadge(license){
 }
 //fucntion for creating link
 function renderLicenseLink(license){
+  if (license !== "None") {
+    return (`\n* [License](#license)\n`)
+  }
+  return ''
 
 }
 //function for license section
 function renderLicenseSection(license){
+  if (license !== "None") {
+    return (`## License: ${license} is the current license used for this application.`)
+  }
+  return ''
 
 }
 // validate lisense exists
@@ -20,12 +28,21 @@ function renderLicenseSection(license){
 
 // function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.name}
-  ${data.github}
-  
-  # GitHub Name
-
-  ${data.projectName}
+  return `# ${data.github}
+  ${renderLicenseBadge(data.license)}
+  ## GitHub Name
+  ${data.email}
+  ## Contact 
+  ${data.projectTitle}
+  # Project Title
+  ${data.description}
+  ## Application Description
+  ${data.dependencies}
+  ### Application Dependencies
+  ${data.license}
+  ### License Used
+  ${renderLicenseSection(data.license)}
+  ${renderLicenseLink(data.license)}
 `;
 }
 
