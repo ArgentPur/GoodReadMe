@@ -1,16 +1,16 @@
-# ArgentPur
-  ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
-  ## GitHub Name
-  sonetto47104123@gmail.com
-  ## Contact 
-  ReadMe Generator
+
   # Project Title
-  This project allows one easily generate a quality README.md for any application.
+  g
+  ## GitHub Name
+  d ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+  ## Contact 
+  q
   ## Application Description
-  Inquirer, fs, path
+  q
   ### Application Dependencies
-  MIT
+  f
   ### License Used
+  MIT
   ## License: MIT is the current license used for this application.
   
 * [License](#license)
