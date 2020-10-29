@@ -49,13 +49,11 @@ function writeToFile(fileName, data) {
 // function to initialize program
 function init() {
     inquirer.prompt(questions) 
-    // .then function
     .then((answers) => {
         console.log("Generating README");
-        writeToFile("README.md", generateMarkdown(...answers))
+        writeToFile("README.md", generateMarkdown({...answers}))
     })
     // call the function writeToFile using the data that we pass (ie the inquirer responses)
-    writeToFile(fileName, data);
 }
 
 // function call to initialize program
