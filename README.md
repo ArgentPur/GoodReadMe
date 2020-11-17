@@ -1,14 +1,14 @@
 
   # Project Title
-  g
+  GoodREADME
   ## GitHub Name
-  d ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+  ArgentPur ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
   ## Contact 
-  q
+  sonetto47104123@gmail.com
   ## Application Description
-  q
+  This project is designed to serve as a template for README.md files.
   ### Application Dependencies
-  f
+  fs, inquirer, path
   ### License Used
   MIT
   ## License: MIT is the current license used for this application.
